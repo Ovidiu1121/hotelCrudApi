@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "447cb8f2-c0c4-4dc7-bff5-832b5b0f5a0c": {
+      "ProjectGuid": "447cb8f2-c0c4-4dc7-bff5-832b5b0f5a0c",
+      "DisplayName": "HotelCrudApi",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
