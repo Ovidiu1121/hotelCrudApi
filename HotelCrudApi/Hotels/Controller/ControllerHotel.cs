@@ -19,13 +19,13 @@ namespace HotelCrudApi.Hotels.Controller
             _hotelQueryService = hotelQueryService;
         }
 
-        public override async Task<ActionResult<Hotel>> CreateHotel([FromBody] CreateHotelRequest request)
+        public override async Task<ActionResult<HotelDto>> CreateHotel([FromBody] CreateHotelRequest request)
         {
             try
             {
                 var hotel = await _hotelCommandService.CreateHotel(request);
 
-                return Ok(hotel);
+                return Created("Hotelul a fost adaugat",hotel);
             }
             catch (ItemAlreadyExists ex)
             {
@@ -33,7 +33,7 @@ namespace HotelCrudApi.Hotels.Controller
             }
         }
 
-        public override async Task<ActionResult<Hotel>> DeleteHotel([FromRoute] int id)
+        public override async Task<ActionResult<HotelDto>> DeleteHotel([FromRoute] int id)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace HotelCrudApi.Hotels.Controller
             }
         }
 
-        public override async Task<ActionResult<IEnumerable<Hotel>>> GetAll()
+        public override async Task<ActionResult<ListHotelDto>> GetAll()
         {
             try
             {
@@ -60,7 +60,20 @@ namespace HotelCrudApi.Hotels.Controller
             }
         }
 
-        public override async Task<ActionResult<Hotel>> GetByNameRoute([FromRoute] string name)
+        public override async Task<ActionResult<HotelDto>> GetByIdRoute([FromRoute] int id)
+        {
+            try
+            {
+                var hotel = await _hotelQueryService.GetById(id);
+                return Ok(hotel);
+            }
+            catch (ItemDoesNotExist ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        
+        public override async Task<ActionResult<HotelDto>> GetByNameRoute([FromRoute] string name)
         {
             try
             {
@@ -73,7 +86,33 @@ namespace HotelCrudApi.Hotels.Controller
             }
         }
 
-        public override async Task<ActionResult<Hotel>> UpdateHotel([FromRoute] int id, [FromBody] UpdateHotelRequest request)
+        public async override Task<ActionResult<HotelDto>> GetByLocationRoute(string location)
+        {
+            try
+            {
+                var hotel = await _hotelQueryService.GetByLocation(location);
+                return Ok(hotel);
+            }
+            catch (ItemDoesNotExist ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        public async override Task<ActionResult<HotelDto>> GetByStarsRoute(int stars)
+        {
+            try
+            {
+                var hotel = await _hotelQueryService.GetByStars(stars);
+                return Ok(hotel);
+            }
+            catch (ItemDoesNotExist ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        public override async Task<ActionResult<HotelDto>> UpdateHotel([FromRoute] int id, [FromBody] UpdateHotelRequest request)
         {
             try
             {

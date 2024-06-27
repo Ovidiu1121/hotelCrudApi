@@ -18,7 +18,14 @@ namespace HotelCrudApi.Hotels.Repository
             _mapper = mapper;
         }
 
-        public async Task<Hotel> CreateHotel(CreateHotelRequest request)
+        public async Task<HotelDto> GetByStarsAsync(int stars)
+        {
+            var hotel = await _context.Hotels.Where(h => h.Stars == stars).FirstOrDefaultAsync();
+            
+            return _mapper.Map<HotelDto>(hotel);
+        }
+
+        public async Task<HotelDto> CreateHotel(CreateHotelRequest request)
         {
             var hotel = _mapper.Map<Hotel>(request);
 
@@ -26,11 +33,11 @@ namespace HotelCrudApi.Hotels.Repository
 
             await _context.SaveChangesAsync();
 
-            return hotel;
+            return _mapper.Map<HotelDto>(hotel);
 
         }
 
-        public async Task<Hotel> DeleteHotel(int id)
+        public async Task<HotelDto> DeleteHotel(int id)
         {
             var hotel = await _context.Hotels.FindAsync(id);
 
@@ -38,25 +45,43 @@ namespace HotelCrudApi.Hotels.Repository
 
             await _context.SaveChangesAsync();
 
-            return hotel;
+            return _mapper.Map<HotelDto>(hotel);
         }
 
-        public async Task<IEnumerable<Hotel>> GetAllAsync()
+        public async Task<ListHotelDto> GetAllAsync()
         {
-            return await _context.Hotels.ToListAsync();
+            List<Hotel> result = await _context.Hotels.ToListAsync();
+            
+            ListHotelDto listHotelDto = new ListHotelDto()
+            {
+                hotelList = _mapper.Map<List<HotelDto>>(result)
+            };
+
+            return listHotelDto;
         }
 
-        public async Task<Hotel> GetByIdAsync(int id)
+        public async Task<HotelDto> GetByIdAsync(int id)
         {
-            return await _context.Hotels.FirstOrDefaultAsync(x => x.Id.Equals(id));
+            var hotel = await _context.Hotels.Where(h => h.Id == id).FirstOrDefaultAsync();
+            
+            return _mapper.Map<HotelDto>(hotel);
         }
 
-        public async Task<Hotel> GetByNameAsync(string name)
+        public async Task<HotelDto> GetByNameAsync(string name)
         {
-            return await _context.Hotels.FirstOrDefaultAsync(x => x.Name.Equals(name));
+            var hotel = await _context.Hotels.Where(h => h.Name.Equals(name)).FirstOrDefaultAsync();
+            
+            return _mapper.Map<HotelDto>(hotel);
         }
 
-        public async Task<Hotel> UpdateHotel(int id, UpdateHotelRequest request)
+        public async Task<HotelDto> GetByLocationAsync(string location)
+        {
+            var hotel = await _context.Hotels.Where(h => h.Location.Equals(location)).FirstOrDefaultAsync();
+            
+            return _mapper.Map<HotelDto>(hotel);
+        }
+
+        public async Task<HotelDto> UpdateHotel(int id, UpdateHotelRequest request)
         {
             var hotel = await _context.Hotels.FindAsync(id);
 
@@ -68,7 +93,7 @@ namespace HotelCrudApi.Hotels.Repository
 
             await _context.SaveChangesAsync();
 
-            return hotel;
+            return _mapper.Map<HotelDto>(hotel);
 
         }
     }

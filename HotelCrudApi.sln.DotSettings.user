@@ -1,0 +1,18 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fef73aa2_002D1848_002D4cb1_002D96a6_002D7d18c42271de/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from TestQueryService.cs" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;ProjectFile&gt;A3EE3451-58D5-4BCE-8F40-406460DC158C/d:UnitTests/f:TestQueryService.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;A3EE3451-58D5-4BCE-8F40-406460DC158C/d:UnitTests/f:TestCommandService.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;ProjectFile&gt;A3EE3451-58D5-4BCE-8F40-406460DC158C/d:UnitTests/f:TestController.cs&lt;/ProjectFile&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Post_Create_ValidRequest_ReturnsCreatedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Post_Create_DoctorAlreadyExists_ReturnsBadRequestStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Put_Update_ValidRequest_ReturnsAcceptedStatusCode_ValidProductContentResponse&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Delete_Delete_DoctorExists_ReturnsDeletedDoctor&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Put_Update_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Get_GetByName_ValidRequest_ReturnsOKStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Delete_Delete_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3EE3451-58D5-4BCE-8F40-406460DC158C::net6.0::tests.IntegrationTests.HotelIntegrationTests.Get_GetByName_DoctorDoesNotExists_ReturnsNotFoundStatusCode&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -16,9 +16,9 @@ namespace HotelCrudApi.Hotels.Service
             _repository = repository;
         }
 
-        public async Task<Hotel> CreateHotel(CreateHotelRequest request)
+        public async Task<HotelDto> CreateHotel(CreateHotelRequest request)
         {
-            Hotel hotel = await _repository.GetByNameAsync(request.Name);
+            HotelDto hotel = await _repository.GetByNameAsync(request.Name);
 
             if (hotel!=null)
             {
@@ -29,9 +29,9 @@ namespace HotelCrudApi.Hotels.Service
             return hotel;
         }
 
-        public async Task<Hotel> DeleteHotel(int id)
+        public async Task<HotelDto> DeleteHotel(int id)
         {
-            Hotel hotel = await _repository.GetByIdAsync(id);
+            HotelDto hotel = await _repository.GetByIdAsync(id);
 
             if (hotel==null)
             {
@@ -42,9 +42,9 @@ namespace HotelCrudApi.Hotels.Service
             return hotel;
         }
 
-        public async Task<Hotel> UpdateHotel(int id, UpdateHotelRequest request)
+        public async Task<HotelDto> UpdateHotel(int id, UpdateHotelRequest request)
         {
-            Hotel hotel = await _repository.GetByIdAsync(id);
+            HotelDto hotel = await _repository.GetByIdAsync(id);
 
             if (hotel==null)
             {

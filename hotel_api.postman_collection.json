@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "f35e2847-bb04-4852-91dd-4c2b7459f5bd",
+		"name": "hotel_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33660681"
+	},
+	"item": [
+		{
+			"name": "GetAllHotels",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7066/api/v1/ControllerHotel/all",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7066",
+					"path": [
+						"api",
+						"v1",
+						"ControllerHotel",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7066/hotel/api/v1/id?id=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7066",
+					"path": [
+						"hotel",
+						"api",
+						"v1",
+						"id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7066/api/v1/ControllerHotel/Brooks",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7066",
+					"path": [
+						"api",
+						"v1",
+						"ControllerHotel",
+						"Brooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTcreateHotel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"aaaa\",\r\n    \"location\": \"aaaa\",\r\n    \"stars\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7066/api/v1/ControllerHotel/create",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7066",
+					"path": [
+						"api",
+						"v1",
+						"ControllerHotel",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUTupdateHotel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stars\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7066/api/v1/ControllerHotel/update/12",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7066",
+					"path": [
+						"api",
+						"v1",
+						"ControllerHotel",
+						"update",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteHotel",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7066/api/v1/ControllerHotel/delete/12",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7066",
+					"path": [
+						"api",
+						"v1",
+						"ControllerHotel",
+						"delete",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

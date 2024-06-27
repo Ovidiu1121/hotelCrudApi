@@ -5,11 +5,13 @@ namespace HotelCrudApi.Hotels.Repository.interfaces
 {
     public interface IHotelRepository
     {
-        Task<IEnumerable<Hotel>> GetAllAsync();
-        Task<Hotel> GetByIdAsync(int id);
-        Task<Hotel> GetByNameAsync(string name);
-        Task<Hotel> CreateHotel(CreateHotelRequest request);
-        Task<Hotel>UpdateHotel(int id,UpdateHotelRequest request);
-        Task<Hotel> DeleteHotel(int id);
+        Task<ListHotelDto> GetAllAsync();
+        Task<HotelDto> GetByIdAsync(int id);
+        Task<HotelDto> GetByNameAsync(string name);
+        Task<HotelDto> GetByLocationAsync(string location);
+        Task<HotelDto> GetByStarsAsync(int stars);
+        Task<HotelDto> CreateHotel(CreateHotelRequest request);
+        Task<HotelDto>UpdateHotel(int id,UpdateHotelRequest request);
+        Task<HotelDto> DeleteHotel(int id);
     }
 }

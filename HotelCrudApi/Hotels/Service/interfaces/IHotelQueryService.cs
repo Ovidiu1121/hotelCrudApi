@@ -1,11 +1,14 @@
-﻿using HotelCrudApi.Hotels.Model;
+﻿using HotelCrudApi.Dto;
+using HotelCrudApi.Hotels.Model;
 
 namespace HotelCrudApi.Hotels.Service.interfaces
 {
     public interface IHotelQueryService
     {
-        Task<IEnumerable<Hotel>> GetAllHotels();
-        Task<Hotel> GetById(int id);
-        Task<Hotel> GetByName(string name);
+        Task<ListHotelDto> GetAllHotels();
+        Task<HotelDto> GetById(int id);
+        Task<HotelDto> GetByName(string name);
+        Task<HotelDto> GetByLocation(string location);
+        Task<HotelDto> GetByStars(int stars);
     }
 }

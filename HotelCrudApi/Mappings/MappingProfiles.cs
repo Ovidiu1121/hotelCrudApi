@@ -11,6 +11,7 @@ namespace HotelCrudApi.Mappings
         {
             CreateMap<CreateHotelRequest, Hotel>();
             CreateMap<UpdateHotelRequest, Hotel>();
+            CreateMap<HotelDto, Hotel>().ReverseMap();
         }
 
     }
